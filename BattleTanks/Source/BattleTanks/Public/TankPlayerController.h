@@ -17,7 +17,14 @@ class BATTLETANKS_API ATankPlayerController : public APlayerController
 	
 public: 
 	virtual void BeginPlay() override;	//virtual allows the child to alter the function and override tells the inherited child to only look for and use that exact same function that has been called
+	virtual void Tick (float Deltatime) override;
 
 private:
 	ATank * GetControlledTank() const;
+
+	//this function will control the rotation and elevation of turret and barrel fror aiming and firing purposes
+	void AimTowardsCrosshair();
+
+	//This part makes the ray trace calculations
+	bool GetSightRayHitLocation (FVector& OutHitLocation) const;
 };
