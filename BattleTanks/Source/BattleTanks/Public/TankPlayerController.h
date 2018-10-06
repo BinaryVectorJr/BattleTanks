@@ -27,4 +27,19 @@ private:
 
 	//This part makes the ray trace calculations
 	bool GetSightRayHitLocation (FVector& OutHitLocation) const;
+
+	//To get the coords for where the crosshair is "looking"
+	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	//Method to get the world space coordinates of wherever the crosshair looks at
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& OutHitLocation) const;
+
+	UPROPERTY(EditAnywhere) 
+	float CrosshairXLocation = 0.5;
+
+	UPROPERTY(EditAnywhere)
+	float CrosshairYLocation = 0.3333;
+
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 1000000;
 };
