@@ -20,7 +20,20 @@ void ATankAIController::BeginPlay()
 	}
 }
 
-ATank* ATankAIController::GetAIControlledTank() const	//Enables us to check which tanks have the AIController in the level
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (GetPlayerTank())
+	{
+		//TODO move towards player
+
+		AimTowardsPlayer();
+	
+		//TODO FireIfReady
+	}
+}
+
+ATank* ATankAIController::GetControlledTank() const	//Enables us to check which tanks have the AIController in the level
 {
 	return Cast<ATank>(GetPawn());
 }
@@ -33,6 +46,11 @@ ATank* ATankAIController::GetPlayerTank() const	//Enables an AI Tank to find the
 	{
 		return Cast<ATank>(PlayerPawn);
 	}
+}
+
+void ATankAIController::AimTowardsPlayer()
+{
+	GetControlledTank()->AimAt(GetPlayerTank()->GetActorLocation());
 }
 
 

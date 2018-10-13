@@ -21,9 +21,9 @@ void ATankPlayerController::BeginPlay()
 	UE_LOG(LogTemp, Warning, TEXT("Player controller BeginPlay"))
 }
 
-void ATankPlayerController:: Tick (float Deltatime)
+void ATankPlayerController:: Tick (float DeltaTime)
 {
-	Super::Tick(Deltatime);
+	Super::Tick(DeltaTime);
 	AimTowardsCrosshair();
 
 	//UE_LOG(LogTemp, Warning, TEXT("Player Controller is ticking"))
@@ -44,9 +44,8 @@ void ATankPlayerController::AimTowardsCrosshair()
 	{
 		if (GetSightRayHitLocation(OutHitLocation))
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Look Direction: %s"),*OutHitLocation.ToString())
+			GetControlledTank()->AimAt(OutHitLocation);
 		}
-	
 	}
 }
 
