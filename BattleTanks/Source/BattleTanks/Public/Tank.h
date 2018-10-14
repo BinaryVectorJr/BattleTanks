@@ -18,6 +18,10 @@ public:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	//Make a function that can be called inside blueprints
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
+
 protected:
 	UTankAimingComponent * TankAimingComponent = nullptr;
 
