@@ -16,7 +16,9 @@ ATank::ATank()
 
 void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
 {
-	TankAimingComponent->SetBarrelReference(BarrelToSet);	//Delegates the active barrel to be set to the tank's aiming component (i.e. an organization within the organization that takes care of the aiming of the barrel department)
+	//Delegate the active barrel to be set to the tank's aiming component 
+	//(i.e. an organization within the organization that takes care of the aiming of the barrel department)
+	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
 
 // Called when the game starts or when spawned
@@ -42,6 +44,6 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void ATank::AimAt(FVector OutHitLocation)
 {
-	TankAimingComponent->AimAt(OutHitLocation);
+	TankAimingComponent->AimAt(OutHitLocation, LaunchSpeed);
 }
 

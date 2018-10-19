@@ -22,6 +22,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = Setup)
 	void SetBarrelReference(UStaticMeshComponent* BarrelToSet);
 
+
 protected:
 	UTankAimingComponent * TankAimingComponent = nullptr;
 
@@ -34,5 +35,9 @@ private:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+
+	UPROPERTY(EditAnywhere, Category = Firing)
+	float LaunchSpeed = 100000;		//1000 m/s speed (since unreal units are closer to cm in real life) and TODO find sensible value
 
 };
