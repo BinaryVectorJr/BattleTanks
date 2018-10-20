@@ -2,6 +2,7 @@
 
 #include "TankAimingComponent.h"
 #include "TankBarrel.h"
+#include "Engine/World.h"
 #include "Components/StaticMeshComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "GameFramework/Actor.h"
@@ -57,8 +58,15 @@ void UTankAimingComponent::AimAt(FVector OutHitLocation, float LaunchSpeed)
 		auto OurTankName = GetOwner()->GetName();
 		//UE_LOG(LogTemp, Warning, TEXT("%s aiming at %s"), *OurTankName, *AimDirection.ToString())
 
-		MoveBarrelTowards(AimDirection);
+		auto DebugTime = GetWorld()->GetTimeSeconds();
+		UE_LOG(LogTemp, Warning, TEXT("%f: Aim solution found!"), DebugTime)
 
+		MoveBarrelTowards(AimDirection);
+	}
+	else
+	{
+		auto DebugTime = GetWorld()->GetTimeSeconds();
+		UE_LOG(LogTemp, Warning, TEXT("%f: No aim solution found!"), DebugTime)
 	}
 }
 
