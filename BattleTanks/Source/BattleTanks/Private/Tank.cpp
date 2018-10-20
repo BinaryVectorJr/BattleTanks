@@ -14,7 +14,7 @@ ATank::ATank()
 
 }
 
-void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
+void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	//Delegate the active barrel to be set to the tank's aiming component 
 	//(i.e. an organization within the organization that takes care of the aiming of the barrel department)
