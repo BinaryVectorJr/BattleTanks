@@ -2,12 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\BattleTanks",
-    "\\BattleTanks\\Content",
     "\\BattleTanks\\Source",
     "\\BattleTanks\\Source\\BattleTanks",
     "\\BattleTanks\\Source\\BattleTanks\\Private",
     "\\BattleTanks\\Source\\BattleTanks\\Public"
   ],
-  "SelectedNode": "\\BattleTanks\\Source\\BattleTanks\\Private\\TankPlayerController.cpp",
+  "SelectedNode": "\\BattleTanks\\Source\\BattleTanks\\Public\\TankBarrel.h",
   "PreviewInSolutionExplorer": false
 }
